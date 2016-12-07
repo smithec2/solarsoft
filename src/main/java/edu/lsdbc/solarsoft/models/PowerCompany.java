@@ -37,15 +37,7 @@ public class PowerCompany {
     public void setPhoneNum(Integer phoneNum) {
         this.phoneNum = phoneNum;
     }
-
-    public String getContactPerson() {
-        return contactPerson;
-    }
-
-    public void setContactPerson(String contactPerson) {
-        this.contactPerson = contactPerson;
-    }
-
+    
 
     // Methods
 

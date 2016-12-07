@@ -12,22 +12,9 @@ public class PowerCompany {
     Address address = new Address();
 
     // Constructor
-
-    public PowerCompany(String companyName, Integer phoneNum, String contactPerson, String address, String apt, String city, String state, Integer zipCode) {
+    public PowerCompany(String companyName, Integer phoneNum,String address, String city, String state, Integer zipCode) {
         this.companyName = companyName;
         this.phoneNum = phoneNum;
-        this.contactPerson = contactPerson;
-        this.address.setAddress(address);
-        this.address.setApt(apt);
-        this.address.setCity(city);
-        this.address.setState(state);
-        this.address.setZipCode(zipCode);
-    }
-
-    public PowerCompany(String companyName, Integer phoneNum, String contactPerson,String address, String city, String state, Integer zipCode) {
-        this.companyName = companyName;
-        this.phoneNum = phoneNum;
-        this.contactPerson = contactPerson;
         this.address.setAddress(address);
         this.address.setCity(city);
         this.address.setState(state);
@@ -59,15 +46,8 @@ public class PowerCompany {
         this.contactPerson = contactPerson;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 
     // Methods
-    
+
 
 }

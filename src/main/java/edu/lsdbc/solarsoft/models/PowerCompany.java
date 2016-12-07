@@ -8,7 +8,6 @@ public class PowerCompany {
     // Attributes
     private String companyName;
     private Integer phoneNum;
-    private String contactPerson;
     Address address = new Address();
 
     // Constructor
@@ -37,7 +36,7 @@ public class PowerCompany {
     public void setPhoneNum(Integer phoneNum) {
         this.phoneNum = phoneNum;
     }
-    
+
 
     // Methods
 

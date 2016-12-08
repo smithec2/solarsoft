@@ -11,11 +11,11 @@ public class SolarPanelQuestion {
         private String roofPitch;
         private String roofMaterial;
         private String roofConstruction;
-        private String connectionToRoof;
-        private String existRoofStructure;
-        private String upliftResistance;
+        private boolean connectionToRoof;
+        private boolean existRoofStructure;
+        private boolean upliftResistance;
 
-        public SolarPanelQuestion(double arrayDimensions,double totalNumberOfPanel ,double ratingOfPhotovoltaic, String roofOrWall, String roofPitch, String roofMaterial, String roofConstruction, String connectionToRoof, String existRoofStructure, String upliftResistance) {
+        public SolarPanelQuestion(double arrayDimensions,double totalNumberOfPanel ,double ratingOfPhotovoltaic, String roofOrWall, String roofPitch, String roofMaterial, String roofConstruction, boolean connectionToRoof, boolean existRoofStructure, boolean upliftResistance) {
             this.arrayDimensions = arrayDimensions;
             this.totalNumberOfPanel= totalNumberOfPanel;
             this.ratingOfPhotovoltaic = ratingOfPhotovoltaic;
@@ -87,27 +87,27 @@ public class SolarPanelQuestion {
             this.roofConstruction = roofConstruction;
         }
 
-        public String getConnectionToRoof() {
+        public boolean getConnectionToRoof() {
             return connectionToRoof;
         }
 
-        public void setConnectionToRoof(String connectionToRoof) {
+        public void setConnectionToRoof(boolean connectionToRoof) {
             this.connectionToRoof = connectionToRoof;
         }
 
-        public String getExistRoofStructure() {
+        public boolean getExistRoofStructure() {
             return existRoofStructure;
         }
 
-        public void setExistRoofStructure(String existRoofStructure) {
+        public void setExistRoofStructure(boolean existRoofStructure) {
             this.existRoofStructure = existRoofStructure;
         }
 
-        public String getUpliftResistance() {
+        public boolean getUpliftResistance() {
             return upliftResistance;
         }
 
-        public void setUpliftResistance(String upliftResistance) {
+        public void setUpliftResistance(boolean upliftResistance) {
             this.upliftResistance = upliftResistance;
         }
     }

@@ -25,5 +25,8 @@ public class ApplicationService {
     public void acceptApplication(String userName, int appID){
 
     }
+    public void rejectApplication(String userName, int appID){
+
+    }
 
 }

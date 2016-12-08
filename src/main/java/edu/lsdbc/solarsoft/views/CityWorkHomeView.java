@@ -23,7 +23,8 @@ public class CityWorkHomeView extends BaseView {
             System.out.println("| 1: View Submitted Applications |");
             System.out.println("| 2: View User Application       |");
             System.out.println("| 3: Accept User Application     |");
-            System.out.println("| 4: Exit                        |");
+            System.out.println("| 4: Reject User Application     |");
+            System.out.println("| 5: Exit                        |");
             System.out.println("|--------------------------------|");
             System.out.println("");
             System.out.println("Enter Number to select your option:");
@@ -50,6 +51,14 @@ public class CityWorkHomeView extends BaseView {
                     workerObject.acceptApplication(userName, appID);
                     break;
                 case 4:
+                    System.out.println("Enter User name");
+                    userName = input.next();
+                    System.out.println("Enter app ID");
+                    appID = input.nextInt();
+                    input.close();
+                    workerObject.rejectApplication(userName, appID);
+                    break;
+                case 5:
                     input.close();
                     exit = false;
                     break;

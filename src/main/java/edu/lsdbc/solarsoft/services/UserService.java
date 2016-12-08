@@ -19,4 +19,7 @@ public class UserService {
     public void removeUser(String userName){
 
     }
+    public void userChangePassword(String password){
+
+    }
 }

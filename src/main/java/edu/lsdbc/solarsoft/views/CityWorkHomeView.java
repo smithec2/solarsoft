@@ -40,7 +40,7 @@ public class CityWorkHomeView extends BaseView {
                     System.out.println("Enter app ID");
                     appID = input.nextInt();
                     input.close();
-                    workerObject.viewUserApplication(userName, appID);
+                    workerObject.viewUserApplication_CW(userName, appID);
                     break;
                 case 3:
                     System.out.println("Enter User name");

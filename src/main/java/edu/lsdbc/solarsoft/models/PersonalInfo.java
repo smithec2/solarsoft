@@ -16,7 +16,7 @@ public class PersonalInfo {
 
     public String getAddress(){
         Scanner scan = new Scanner(System.in);
-        System.out.print("Enter Address: ");
+        System.out.print("Enter Address:  ");
         address = scan.nextLine();
         return address;
     }

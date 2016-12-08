@@ -2,6 +2,7 @@ package edu.lsdbc.solarsoft.views;
 
 import edu.lsdbc.solarsoft.services.UserService;
 
+import java.io.Console;
 import java.util.Scanner;
 
 /**

@@ -13,6 +13,8 @@ public class Contractor {
 
 //Constructor for test class
 
+    public Contractor(){}
+
     public Contractor(String companyName, Integer phoneNum, String contactPerson, String email, Address address) {
         this.companyName = companyName;
         this.phoneNum = phoneNum;

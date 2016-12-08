@@ -7,7 +7,10 @@ public class ApplicationService {
     public void viewAllSubmitedApplications(){
 
     }
-    public void viewUserApplication(String userName, int appID){
+    public void viewUserApplication_CW(String userName, int appID){
+
+    }
+    public void viewApps_User(String userName, int appID){
 
     }
     public void newApplication(){

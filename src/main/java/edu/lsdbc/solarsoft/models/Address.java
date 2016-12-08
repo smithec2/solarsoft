@@ -19,6 +19,7 @@ public class Address {
         this.zipCode = zipCode;
     }
 
+
     public Address() {
         this.city = "Bountiful";
         this.state = "UT";
@@ -66,7 +67,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return address + " " + apt + "\n"+ city + ", "+ state + " "+ zipCode;
+        return address + " " + apt + "\n" + city + ", " + state + " " + zipCode;
     }
 
 }

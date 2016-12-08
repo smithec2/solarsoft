@@ -27,6 +27,9 @@ public class SolarPanelQuestion {
             this.existRoofStructure = existRoofStructure;
             this.upliftResistance = upliftResistance;
         }
+        public SolarPanelQuestion(){
+
+        }
 
         public double getTotalNumberOfPanel() {
             return totalNumberOfPanel;

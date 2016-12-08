@@ -32,7 +32,7 @@ public class AdminHome implements BaseView {
                     break;
                 case 2:
                     input.close();
-                    EditUserView editUsers = new EditUserView();
+                    EditUserView_AdminMod editUsers = new EditUserView_AdminMod();
                     editUsers.display();
                     break;
                 case 3:

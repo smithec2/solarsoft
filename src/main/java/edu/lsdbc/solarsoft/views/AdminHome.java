@@ -1,8 +1,6 @@
 package edu.lsdbc.solarsoft.views;
 
-import edu.lsdbc.solarsoft.services.AddUserService;
-import edu.lsdbc.solarsoft.services.EditUserService;
-import edu.lsdbc.solarsoft.services.RemoveUserService;
+import edu.lsdbc.solarsoft.services.UserService;
 
 import java.util.Scanner;
 
@@ -29,12 +27,12 @@ public class AdminHome implements BaseView {
             switch (input.nextInt()) {
                 case 1:
                     input.close();
-                    AddUserService newUser = new AddUserService();
-                    newUser.addNewUser();
+                    UserService userObject = new UserService();
+                    userObject.addNewUser();
                     break;
                 case 2:
                     input.close();
-                    EditUserDisplay editUsers = new EditUserDisplay();
+                    EditUserView_AdminMod editUsers = new EditUserView_AdminMod();
                     editUsers.display();
                     break;
                 case 3:

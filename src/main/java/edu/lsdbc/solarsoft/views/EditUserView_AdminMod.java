@@ -1,16 +1,15 @@
 package edu.lsdbc.solarsoft.views;
 
 
-import edu.lsdbc.solarsoft.services.EditUserService;
-import edu.lsdbc.solarsoft.services.RemoveUserService;
+import edu.lsdbc.solarsoft.services.UserService;
 
 import java.util.Scanner;
 
 /**
  * Created by Scott on 12/7/2016.
  */
-public class EditUserDisplay implements BaseView {
-    EditUserService userToEdit = new EditUserService();
+public class EditUserView_AdminMod implements BaseView {
+    UserService userToEdit = new UserService();
     public void display() {
         Scanner input = new Scanner(System.in);
         boolean exit = true;
@@ -54,8 +53,8 @@ public class EditUserDisplay implements BaseView {
                     System.out.println("Enter User Name to be Remove");
                     String userName = input.next();
                     input.close();
-                    RemoveUserService userToRemove = new RemoveUserService();
-                    userToRemove.remove(userName);
+                    UserService userToRemove = new UserService();
+                    userToRemove.removeUser(userName);
                     break;
                 case 6:
                     exit = false;

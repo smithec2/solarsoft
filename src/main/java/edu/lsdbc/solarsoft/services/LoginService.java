@@ -5,7 +5,10 @@ package edu.lsdbc.solarsoft.services;
  */
 public class LoginService {
     public boolean haveUsername(String userName) {
+        return true;
+    }
 
+    public boolean checkPassword(String password) {
         return true;
     }
 }

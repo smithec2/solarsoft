@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Created by Scott on 12/8/2016.
  */
-public class CityWorkHomeView extends BaseView {
+public class CityWorkHomeView {//extends BaseView {
 
     public void display() {
         ApplicationService workerObject = new ApplicationService();

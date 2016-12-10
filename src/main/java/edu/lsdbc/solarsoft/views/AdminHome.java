@@ -28,7 +28,7 @@ public class AdminHome implements BaseView {
                 case 1:
                     input.close();
                     UserService userObject = new UserService();
-                    userObject.addNewUser();
+                    //userObject.addNewUser();
                     break;
                 case 2:
                     input.close();

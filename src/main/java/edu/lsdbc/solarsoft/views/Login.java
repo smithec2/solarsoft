@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by XPS on 12/1/2016.
  */
-public class Login implements BaseView {
+public class Login extends BaseView {
     LoginService loginService = new LoginService();
     HomepageService homepageService = new HomepageService();
     Scanner input = new Scanner(System.in);

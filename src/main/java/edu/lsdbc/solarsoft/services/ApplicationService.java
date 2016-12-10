@@ -32,4 +32,8 @@ public class ApplicationService {
 
     }
 
+    public void saveApplication(String username, int appID){
+
+    }
+
 }

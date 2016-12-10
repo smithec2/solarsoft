@@ -11,6 +11,9 @@ import java.util.Scanner;
 public class Login implements BaseView {
     LoginService loginService = new LoginService();
     HomepageService homepageService = new HomepageService();
+    Scanner input = new Scanner(System.in);
+    String userName = null;
+    public Login(){}
     public void display() {
         Scanner input = new Scanner(System.in);
         String userName = null;
@@ -23,6 +26,7 @@ public class Login implements BaseView {
             }
             System.out.println("Enter Password");
             password = input.next();
+
         }
         // go to the home page
         homepageService.goHome(userName);

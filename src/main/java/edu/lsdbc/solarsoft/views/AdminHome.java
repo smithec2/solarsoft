@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Created by Scott on 12/6/2016.
  */
-public class AdminHome implements BaseView {
+public class AdminHome extends BaseView {
 
     public void display() {
         Scanner input = new Scanner(System.in);

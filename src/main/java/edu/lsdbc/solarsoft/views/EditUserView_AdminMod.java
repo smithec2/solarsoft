@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by Scott on 12/7/2016.
  */
-public class EditUserView_AdminMod implements BaseView {
+public class EditUserView_AdminMod extends BaseView {
     UserService userToEdit = new UserService();
     public void display() {
         Scanner input = new Scanner(System.in);

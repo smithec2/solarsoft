@@ -4,7 +4,7 @@ package edu.lsdbc.solarsoft.services;
  * Created by Scott on 12/7/2016.
  */
 public class UserService {
-    public void addNewUser(){
+    public void addNewUser(String userName, String password, String userType){
 
     }
     public void editUserName(String userName) {

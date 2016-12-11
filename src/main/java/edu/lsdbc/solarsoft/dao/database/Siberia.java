@@ -16,12 +16,6 @@ import java.util.Map;
  */
 public class Siberia {
 
-    //Constructor
-    private Siberia() {
-        users.put("Glen", new SystemUser("Glen", "yummytrees", UserType.applicant));
-        users.put("Glen", new SystemUser("Glen", "fearme", UserType.admin));
-        users.put("Glen", new SystemUser("Glen", "freeme", UserType.employ));
-    }
 
     //users
     private Map<String, SystemUser> users = new HashMap<String, SystemUser>();
@@ -30,6 +24,13 @@ public class Siberia {
     private List<SolarApplication> applications = new ArrayList<SolarApplication>();
 
     private static Siberia ourInstance = new Siberia();
+
+    //Constructor
+    private Siberia() {
+        users.put("app", new SystemUser("app", "p", UserType.applicant));
+        users.put("admin", new SystemUser("admin", "p", UserType.admin));
+        users.put("emp", new SystemUser("emp", "p", UserType.employ));
+    }
 
     public static Siberia getInstance() {
         return ourInstance;

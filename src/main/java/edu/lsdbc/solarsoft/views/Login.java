@@ -13,22 +13,24 @@ public class Login extends BaseView {
     HomepageService homepageService = new HomepageService();
     Scanner input = new Scanner(System.in);
     String userName = null;
-    public Login(){}
+
+    public Login() {
+    }
+
     public void display() {
         Scanner input = new Scanner(System.in);
         String userName = null;
         String password = null;
 
-        while (!loginService.checkPassword(password)) {
-            while (!loginService.haveUsername(userName)) {
-                System.out.println("Enter User Name");
-                userName = input.next();
-            }
-            System.out.println("Enter Password");
-            password = input.next();
-
+        System.out.println("Enter User Name");
+        userName = input.next();
+        System.out.println("Enter Password");
+        password = input.next();
+        if (loginService.authenticateUser(userName, password)) {
+            // go to the home page
+            homepageService.goHome(userName);
+        } else {
+            new UnableToLoginView().display();
         }
-        // go to the home page
-        homepageService.goHome(userName);
     }
 }

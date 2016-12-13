@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by Scott on 12/13/2016.
  */
-public class EnterCredentialsView {
+public class EnterCredentialsView extends BaseView{
     LoginService loginService = new LoginService();
     HomepageService homepageService = new HomepageService();
     Scanner inputCred = new Scanner(System.in);

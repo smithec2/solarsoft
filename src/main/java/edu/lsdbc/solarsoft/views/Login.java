@@ -1,36 +1,39 @@
 package edu.lsdbc.solarsoft.views;
 
-import edu.lsdbc.solarsoft.services.HomepageService;
-import edu.lsdbc.solarsoft.services.LoginService;
-
 import java.util.Scanner;
 
 /**
  * Created by XPS on 12/1/2016.
  */
 public class Login extends BaseView {
-    LoginService loginService = new LoginService();
-    HomepageService homepageService = new HomepageService();
-    Scanner input = new Scanner(System.in);
-    String userName = null;
-
-    public Login() {
-    }
-
     public void display() {
         Scanner input = new Scanner(System.in);
-        String userName = null;
-        String password = null;
+        boolean exit = true;
 
-        System.out.println("Enter User Name");
-        userName = input.next();
-        System.out.println("Enter Password");
-        password = input.next();
-        if (loginService.authenticateUser(userName, password)) {
-            // go to the home page
-            homepageService.goHome(userName);
-        } else {
-            new UnableToLoginView().display();
+        while (exit) {
+            System.out.println("|----------------|");
+            System.out.println("|     Login      |");
+            System.out.println("|----------------|");
+            System.out.println("| 1: Login       |");
+            System.out.println("| 2: New User    |");
+            System.out.println("|----------------|");
+            System.out.println("");
+            System.out.println("Enter Number to select your option:");
+
+            switch (input.nextInt()) {
+                case 1:
+                    input.close();
+                    EnterCredentialsView login = new EnterCredentialsView();
+                    login.display();
+                    break;
+                case 2:
+                    input.close();
+                    CreateNewUserView newUser = new CreateNewUserView();
+                    newUser.display();
+                    break;
+
+            }
+
         }
     }
 }

@@ -15,9 +15,8 @@ public class CreateNewUserView {
         LoginService loginService = new LoginService();
         HomepageService homepageService = new HomepageService();
         UserService userService = new UserService();
-        String userType = null;
 
-        // Here we ask for the new user's desired name, password and type
+        // Here we ask for the new user's desired name and password
         System.out.println("Enter New Username:");
         String userName = input.next();
         while (loginService.haveUsername(userName)) {
@@ -27,25 +26,8 @@ public class CreateNewUserView {
         System.out.println("Enter Password: ");
         String password = input.next();
 
-        System.out.println("Enter User Type. 1 for Admin, 2 for Contractor, 3 for Normal:");
-        int typeChoice = input.nextInt();
-        while (typeChoice < 1 || typeChoice > 3) {
-            System.out.println("Invalid choice. Try again:");
-            typeChoice = input.nextInt();
-        }
-
-        // integer choice converted to user type string
-        switch (typeChoice) {
-            case 1:
-                userType = "Admin";
-                break;
-            case 2:
-                userType = "Contractor";
-                break;
-            case 3:
-                userType = "Normal";
-                break;
-        }
+        // Default to Normal user
+        String userType = "normal";
 
         // Add the User to the database
         userService.addNewUser(userName, password, userType);

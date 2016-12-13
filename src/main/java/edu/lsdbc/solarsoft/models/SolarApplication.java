@@ -33,9 +33,11 @@ public class SolarApplication {
     //constructor for new application
     public SolarApplication(String userName) {
         this.userName = userName;
-        this.applicationIDSingleton = applicationIDSingleton;
-        this.conditionalUsePermit = conditionalUsePermit;
-        this.attachment2 = attachment2;
+        this.applicationIDSingleton = new ApplicationIDSingleton();
+        this.conditionalUsePermit = new ConditionalUsePermit();
+            //We need to fill out the application.... empty now
+        this.attachment2 = new Attachment2();
+            //We need to fill out the application.... empty now
     }
 
     //constructor for existing application

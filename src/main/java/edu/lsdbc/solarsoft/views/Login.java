@@ -16,6 +16,7 @@ public class Login extends BaseView {
             System.out.println("|----------------|");
             System.out.println("| 1: Login       |");
             System.out.println("| 2: New User    |");
+            System.out.println("| 3: Exit        |");
             System.out.println("|----------------|");
             System.out.println("");
             System.out.println("Enter Number to select your option:");
@@ -31,7 +32,9 @@ public class Login extends BaseView {
                     CreateNewUserView newUser = new CreateNewUserView();
                     newUser.display();
                     break;
-
+                case 3:
+                    exit = false;
+                    break;
             }
 
         }

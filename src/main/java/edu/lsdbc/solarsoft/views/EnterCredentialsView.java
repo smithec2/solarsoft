@@ -14,6 +14,10 @@ public class EnterCredentialsView extends BaseView{
     Scanner inputCred = new Scanner(System.in);
     String userName = null;
 
+    public String getUserName(){
+        return userName;
+    }
+
     public EnterCredentialsView() {
     }
 

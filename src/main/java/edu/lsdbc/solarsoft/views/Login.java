@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Login extends BaseView {
     public void display() {
-        Scanner input = new Scanner(System.in);
+        Scanner inputLogin = new Scanner(System.in);
         boolean exit = true;
 
         while (exit) {
@@ -21,18 +21,19 @@ public class Login extends BaseView {
             System.out.println("");
             System.out.println("Enter Number to select your option:");
 
-            switch (input.nextInt()) {
+            switch (inputLogin.nextInt()) {
                 case 1:
-                    input.close();
+                    inputLogin.close();
                     EnterCredentialsView login = new EnterCredentialsView();
                     login.display();
                     break;
                 case 2:
-                    input.close();
+                    inputLogin.close();
                     CreateNewUserView newUser = new CreateNewUserView();
                     newUser.display();
                     break;
                 case 3:
+                    inputLogin.close();
                     exit = false;
                     break;
             }

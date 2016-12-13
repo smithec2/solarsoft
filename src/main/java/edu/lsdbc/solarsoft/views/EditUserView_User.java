@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by Scott on 12/7/2016.
  */
-public class EditUserView_User implements BaseView {
+public class EditUserView_User extends BaseView {
     public void display() {
         UserService userToEdit = new UserService();
         Scanner input = new Scanner(System.in);

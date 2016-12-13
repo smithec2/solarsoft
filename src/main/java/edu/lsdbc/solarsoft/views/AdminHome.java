@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class AdminHome extends BaseView {
 
-    public void display(String userName) {
+    public void display() {
         Scanner input = new Scanner(System.in);
         boolean exit = true;
 

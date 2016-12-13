@@ -14,7 +14,7 @@ public class HomepageService {
                 new UserHome().display(userName);
             break;
             case admin:
-                new AdminHome().display();
+                new AdminHome().display(userName);
                 break;
             case employ:
                 //EmployHome

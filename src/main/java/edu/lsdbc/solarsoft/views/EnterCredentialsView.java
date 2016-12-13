@@ -25,9 +25,9 @@ public class EnterCredentialsView extends BaseView{
     public EnterCredentialsView() {
     }
 
-    public void display() {
+    public void display(String userName) {
         Scanner input = new Scanner(System.in);
-        String userName = null;
+        //String userName = null;
         String password = null;
 
         System.out.println("Enter User Name");
@@ -39,7 +39,7 @@ public class EnterCredentialsView extends BaseView{
             // go to the home page
             homepageService.goHome(userName);
         } else {
-            new UnableToLoginView().display();
+            new UnableToLoginView().display(userName);
         }
     }
 

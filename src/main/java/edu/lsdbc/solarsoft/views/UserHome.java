@@ -27,7 +27,7 @@ public class UserHome {
             switch (input.nextInt()) {
                 case 1:
                     EditUserView_User editSelf = new EditUserView_User();
-                    editSelf.display();
+                    editSelf.display(userName);
                     break;
                 case 2:
                     // Run ApplicationService viewApps_User

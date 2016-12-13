@@ -9,7 +9,7 @@ import java.util.Scanner;
  * Created by Arthur on 12/8/2016.
  */
 public class CreateNewUserView {
-    public void display() {
+    public void display(String userName) {
         // Scanner and services
         Scanner input = new Scanner(System.in);
         LoginService loginService = new LoginService();
@@ -19,7 +19,7 @@ public class CreateNewUserView {
 
         // Here we ask for the new user's desired name, password and type
         System.out.println("Enter New Username:");
-        String userName = input.next();
+        userName = input.next();
         while (loginService.haveUsername(userName)) {
             System.out.println("Name already in use. Enter a different username:");
             userName = input.next();

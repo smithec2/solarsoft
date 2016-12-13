@@ -1,5 +1,6 @@
 package edu.lsdbc.solarsoft.views;
 
+import com.sun.org.apache.xml.internal.utils.StringToStringTableVector;
 import edu.lsdbc.solarsoft.services.UserService;
 
 import java.util.Scanner;
@@ -27,7 +28,11 @@ public class AdminHome extends BaseView {
             switch (input.nextInt()) {
                 case 1:
                     UserService userObject = new UserService();
-                    //userObject.addNewUser();
+                    userName = input.next();
+                    String password = input.next();
+                    System.out.println("Optional user types: admin, employ, applicant");
+                    String userType = input.next();
+                    userObject.addNewUser(userName, password, userType);
                     break;
                 case 2:
                     EditUserView_AdminMod editUsers = new EditUserView_AdminMod();

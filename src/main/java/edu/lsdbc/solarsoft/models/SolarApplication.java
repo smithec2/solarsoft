@@ -40,5 +40,5 @@ public class SolarApplication {
             //We need to fill out the application.... empty now
     }
 
-    //constructor for existing application
+    //constructor for existing application... not made yet.
 }

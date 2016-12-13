@@ -8,6 +8,7 @@ import edu.lsdbc.solarsoft.views.Login;
 public class main {
     public static void main(String [] args) {
         Login login = new Login();
-        login.display();
+        String userName = null;
+        login.display(userName);
     }
 }

@@ -23,7 +23,6 @@ public class UserHome {
 
             switch (input.nextInt()) {
                 case 1:
-                    input.close();
                     EditUserView_User editSelf = new EditUserView_User();
                     editSelf.display();
                     break;

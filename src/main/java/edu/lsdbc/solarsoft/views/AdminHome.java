@@ -26,17 +26,14 @@ public class AdminHome extends BaseView {
 
             switch (input.nextInt()) {
                 case 1:
-                    input.close();
                     UserService userObject = new UserService();
                     //userObject.addNewUser();
                     break;
                 case 2:
-                    input.close();
                     EditUserView_AdminMod editUsers = new EditUserView_AdminMod();
                     editUsers.display();
                     break;
                 case 3:
-                    input.close();
                     exit = false;
                     break;
             }

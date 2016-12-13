@@ -111,3 +111,6 @@ public class SolarPanelQuestion {
             this.upliftResistance = upliftResistance;
         }
     }
+
+
+

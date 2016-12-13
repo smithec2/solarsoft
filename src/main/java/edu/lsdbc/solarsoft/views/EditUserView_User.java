@@ -9,7 +9,7 @@ import java.util.Scanner;
  * Created by Scott on 12/7/2016.
  */
 public class EditUserView_User extends BaseView {
-    public void display() {
+    public void display(String userName) {
         UserService userToEdit = new UserService();
         Scanner input = new Scanner(System.in);
         boolean exit = true;

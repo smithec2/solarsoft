@@ -9,12 +9,12 @@ import java.util.Scanner;
  */
 public class CityWorkHomeView {//extends BaseView {
 
-    public void display() {
+    public void display(String userName) {
         ApplicationService workerObject = new ApplicationService();
         Scanner input = new Scanner(System.in);
         boolean exit = true;
         int appID;
-        String userName = null;
+        //String userName = null;
 
         while (exit) {
             System.out.println("|--------------------------------|");

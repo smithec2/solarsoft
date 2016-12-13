@@ -12,7 +12,7 @@ public class ApplicationService {
     public void viewUserApplication_CW(String userName, int appID){
 
     }
-    public void viewApps_User(String userName, int appID){
+    public void viewApps_User(String userName){
 
     }
     public void newApplication(){

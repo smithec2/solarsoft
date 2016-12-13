@@ -5,7 +5,7 @@ package edu.lsdbc.solarsoft.views;
  */
 public abstract class  BaseView {
 
-    public abstract void display();
+    public abstract void display(String userName);
 
     public void clearDisplay(){
        System.out.println("");
@@ -16,4 +16,6 @@ public abstract class  BaseView {
        System.out.println("");
        System.out.println("");
     }
+
+
 }

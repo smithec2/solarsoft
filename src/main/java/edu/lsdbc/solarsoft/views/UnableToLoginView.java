@@ -5,12 +5,12 @@ package edu.lsdbc.solarsoft.views;
  */
 public class UnableToLoginView extends BaseView {
 
-    public void display() {
+    public void display(String userName) {
         clearDisplay();
         System.out.println("Sorry User Name and Password do not match");
         System.out.println("");
         System.out.println("");
         System.out.println("");
-        new Login().display();
+        new Login().display(userName);
     }
 }

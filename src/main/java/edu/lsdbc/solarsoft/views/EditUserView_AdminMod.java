@@ -10,9 +10,10 @@ import java.util.Scanner;
  */
 public class EditUserView_AdminMod extends BaseView {
     UserService userToEdit = new UserService();
-    public void display() {
+    public void display(String userName) {
         Scanner input = new Scanner(System.in);
         boolean exit = true;
+        String adminUserName = userName;
 
         while (exit) {
             System.out.println("|-------------------------|");
@@ -33,13 +34,13 @@ public class EditUserView_AdminMod extends BaseView {
                     break;
                 case 2:
                     System.out.println("Enter User Name to Edit:");
-                    String username = input.next();
-                    userToEdit.editUserName(username);
+                    String username_Edit = input.next();
+                    userToEdit.editUserName(username_Edit);
                     break;
                 case 3:
                     System.out.println("Enter new password:");
-                    String password = input.next();
-                    userToEdit.changePassword(password);
+                    String password_New = input.next();
+                    userToEdit.changePassword(userName, password_New);
                     break;
                 case 4:
                     System.out.println("Enter User access type");
@@ -48,9 +49,9 @@ public class EditUserView_AdminMod extends BaseView {
                     break;
                 case 5:
                     System.out.println("Enter User Name to be Remove");
-                    String userName = input.next();
+                    String userName_Remove = input.next();
                     UserService userToRemove = new UserService();
-                    userToRemove.removeUser(userName);
+                    userToRemove.removeUser(userName_Remove);
                     break;
                 case 6:
                     exit = false;

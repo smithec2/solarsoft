@@ -5,7 +5,7 @@ import edu.lsdbc.solarsoft.services.ApplicationService;
 import java.util.Scanner;
 
 public class EditApplicationView extends BaseView{
-    public void display() {
+    public void display(String userName) {
         Scanner input = new Scanner(System.in);
         ApplicationService applicationObject = new ApplicationService();
         EnterCredentialsView username = new EnterCredentialsView();

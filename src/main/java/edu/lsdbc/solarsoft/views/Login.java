@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Created by XPS on 12/1/2016.
  */
 public class Login extends BaseView {
-    public void display() {
+    public void display(String userName) {
         Scanner input = new Scanner(System.in);
         boolean exit = true;
 
@@ -24,11 +24,11 @@ public class Login extends BaseView {
             switch (input.nextInt()) {
                 case 1:
                     EnterCredentialsView login = new EnterCredentialsView();
-                    login.display();
+                    login.display(userName);
                     break;
                 case 2:
                     CreateNewUserView newUser = new CreateNewUserView();
-                    newUser.display();
+                    newUser.display(userName);
                     break;
                 case 3:
                     exit = false;

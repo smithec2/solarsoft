@@ -11,10 +11,10 @@ public class HomepageService {
     public void goHome(String userName) {
         switch (findUserType(userName)){
             case applicant:
-                new UserHome().display();
+                new UserHome().display(userName);
             break;
             case admin:
-                new AdminHome().display();
+                new AdminHome().display(userName);
                 break;
             case employ:
                 //EmployHome

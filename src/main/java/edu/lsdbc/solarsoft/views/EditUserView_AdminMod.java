@@ -13,6 +13,7 @@ public class EditUserView_AdminMod extends BaseView {
     public void display(String userName) {
         Scanner input = new Scanner(System.in);
         boolean exit = true;
+        String adminUserName = userName;
 
         while (exit) {
             System.out.println("|-------------------------|");
@@ -39,8 +40,7 @@ public class EditUserView_AdminMod extends BaseView {
                 case 3:
                     System.out.println("Enter new password:");
                     String password_New = input.next();
-                    //Needs to pass userName
-                    userToEdit.changePassword(password_New);
+                    userToEdit.changePassword(userName, password_New);
                     break;
                 case 4:
                     System.out.println("Enter User access type");

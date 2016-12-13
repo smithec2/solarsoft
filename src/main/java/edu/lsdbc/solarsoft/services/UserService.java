@@ -10,7 +10,7 @@ public class UserService {
     public void editUserName(String userName) {
 
     }
-    public void changePassword(String password){
+    public void changePassword(String userName, String password){
 
     }
     public void userAccessType(String userType){

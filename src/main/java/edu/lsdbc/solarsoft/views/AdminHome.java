@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class AdminHome extends BaseView {
 
-    public void display() {
+    public void display(String userName) {
         Scanner input = new Scanner(System.in);
         boolean exit = true;
 
@@ -31,7 +31,8 @@ public class AdminHome extends BaseView {
                     break;
                 case 2:
                     EditUserView_AdminMod editUsers = new EditUserView_AdminMod();
-                    editUsers.display();
+                    userName = input.next();
+                    editUsers.display(userName);
                     break;
                 case 3:
                     exit = false;

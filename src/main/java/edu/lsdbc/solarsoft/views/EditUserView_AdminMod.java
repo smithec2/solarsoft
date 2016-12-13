@@ -34,25 +34,21 @@ public class EditUserView_AdminMod extends BaseView {
                 case 2:
                     System.out.println("Enter User Name to Edit:");
                     String username = input.next();
-                    input.close();
                     userToEdit.editUserName(username);
                     break;
                 case 3:
                     System.out.println("Enter new password:");
                     String password = input.next();
-                    input.close();
                     userToEdit.changePassword(password);
                     break;
                 case 4:
                     System.out.println("Enter User access type");
                     String userAccess = input.next();
-                    input.close();
                     userToEdit.userAccessType(userAccess);
                     break;
                 case 5:
                     System.out.println("Enter User Name to be Remove");
                     String userName = input.next();
-                    input.close();
                     UserService userToRemove = new UserService();
                     userToRemove.removeUser(userName);
                     break;

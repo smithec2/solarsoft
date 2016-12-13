@@ -31,7 +31,6 @@ public class CityWorkHomeView {//extends BaseView {
 
             switch (input.nextInt()) {
                 case 1:
-                    input.close();
                     workerObject.viewAllSubmitedApplications();
                     break;
                 case 2:
@@ -39,7 +38,6 @@ public class CityWorkHomeView {//extends BaseView {
                     userName = input.next();
                     System.out.println("Enter app ID");
                     appID = input.nextInt();
-                    input.close();
                     workerObject.viewUserApplication_CW(userName, appID);
                     break;
                 case 3:
@@ -47,7 +45,6 @@ public class CityWorkHomeView {//extends BaseView {
                     userName = input.next();
                     System.out.println("Enter app ID");
                     appID = input.nextInt();
-                    input.close();
                     workerObject.acceptApplication(userName, appID);
                     break;
                 case 4:
@@ -55,11 +52,9 @@ public class CityWorkHomeView {//extends BaseView {
                     userName = input.next();
                     System.out.println("Enter app ID");
                     appID = input.nextInt();
-                    input.close();
                     workerObject.rejectApplication(userName, appID);
                     break;
                 case 5:
-                    input.close();
                     exit = false;
                     break;
             }

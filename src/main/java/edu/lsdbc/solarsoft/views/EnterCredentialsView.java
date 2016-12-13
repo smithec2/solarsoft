@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class EnterCredentialsView extends BaseView{
     LoginService loginService = new LoginService();
     HomepageService homepageService = new HomepageService();
-    Scanner inputCred = new Scanner(System.in);
     String userName = null;
 
     public String getUserName(){
@@ -22,14 +21,14 @@ public class EnterCredentialsView extends BaseView{
     }
 
     public void display() {
-        Scanner inputCred = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         String userName = null;
         String password = null;
 
         System.out.println("Enter User Name");
-        userName = inputCred.next();
+        userName = input.next();
         System.out.println("Enter Password");
-        password = inputCred.next();
+        password = input.next();
         if (loginService.authenticateUser(userName, password)) {
             // go to the home page
             homepageService.goHome(userName);

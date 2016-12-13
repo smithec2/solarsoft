@@ -14,6 +14,10 @@ public class EnterCredentialsView {
     Scanner input = new Scanner(System.in);
     String userName = null;
 
+    public String getUserName(){
+        return userName;
+    }
+
     public EnterCredentialsView() {
     }
 

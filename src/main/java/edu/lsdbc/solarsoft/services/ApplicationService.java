@@ -1,5 +1,7 @@
 package edu.lsdbc.solarsoft.services;
 
+import edu.lsdbc.solarsoft.views.EnterCredentialsView;
+
 /**
  * Created by Scott on 12/8/2016.
  */
@@ -14,7 +16,9 @@ public class ApplicationService {
 
     }
     public void newApplication(){
-
+        ApplicationIDSingleton appID = new ApplicationIDSingleton();
+        EnterCredentialsView username = new EnterCredentialsView();
+        NewApplicationService application = new NewApplicationService(username.getUserName(),appID.newAppID());
     }
     public void editApplication(String userName, int appID) {
 

@@ -11,21 +11,21 @@ import java.util.Scanner;
 public class EnterCredentialsView {
     LoginService loginService = new LoginService();
     HomepageService homepageService = new HomepageService();
-    Scanner input = new Scanner(System.in);
+    Scanner inputCred = new Scanner(System.in);
     String userName = null;
 
     public EnterCredentialsView() {
     }
 
     public void display() {
-        Scanner input = new Scanner(System.in);
+        Scanner inputCred = new Scanner(System.in);
         String userName = null;
         String password = null;
 
         System.out.println("Enter User Name");
-        userName = input.next();
+        userName = inputCred.next();
         System.out.println("Enter Password");
-        password = input.next();
+        password = inputCred.next();
         if (loginService.authenticateUser(userName, password)) {
             // go to the home page
             homepageService.goHome(userName);

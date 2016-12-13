@@ -13,6 +13,10 @@ public class EnterCredentialsView extends BaseView{
     HomepageService homepageService = new HomepageService();
     String userName = null;
 
+    public String getUserName(){
+        return userName;
+    }
+
     public EnterCredentialsView() {
     }
 

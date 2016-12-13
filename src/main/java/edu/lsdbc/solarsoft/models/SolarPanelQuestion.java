@@ -1,9 +1,9 @@
 package edu.lsdbc.solarsoft.models;
 
-    /**
-     * Created by g47 on 12/7/16.
-     */
-    public class SolarPanelQuestion {
+/**
+ * Created by g47 on 12/7/16.
+ */
+public class SolarPanelQuestion {
         private double arrayDimensions;
         private double totalNumberOfPanel;
         private double ratingOfPhotovoltaic;
@@ -111,8 +111,3 @@ package edu.lsdbc.solarsoft.models;
             this.upliftResistance = upliftResistance;
         }
     }
-
-
-
-
-

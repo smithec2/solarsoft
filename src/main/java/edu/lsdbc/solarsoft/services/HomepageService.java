@@ -1,6 +1,8 @@
 package edu.lsdbc.solarsoft.services;
 
 import edu.lsdbc.solarsoft.models.UserType;
+import edu.lsdbc.solarsoft.views.AdminHome;
+import edu.lsdbc.solarsoft.views.UserHome;
 
 /**
  * Created by XPS on 12/1/2016.
@@ -9,7 +11,14 @@ public class HomepageService {
     public void goHome(String userName) {
         switch (findUserType(userName)){
             case applicant:
-                //new ApplicantHomePage.display();
+                new UserHome().display();
+            break;
+            case admin:
+                new AdminHome().display();
+                break;
+            case employ:
+                //EmployHome
+                break;
         }
 
 

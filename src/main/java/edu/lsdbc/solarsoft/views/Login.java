@@ -8,25 +8,29 @@ import java.util.Scanner;
 /**
  * Created by XPS on 12/1/2016.
  */
-public class Login implements BaseView {
+public class Login extends BaseView {
     LoginService loginService = new LoginService();
     HomepageService homepageService = new HomepageService();
+    Scanner input = new Scanner(System.in);
+    String userName = null;
+
+    public Login() {
+    }
+
     public void display() {
         Scanner input = new Scanner(System.in);
         String userName = null;
-        while (!loginService.haveUsername(userName)) {
-            System.out.println("Enter User Name");
-            userName = input.next();
+        String password = null;
+
+        System.out.println("Enter User Name");
+        userName = input.next();
+        System.out.println("Enter Password");
+        password = input.next();
+        if (loginService.authenticateUser(userName, password)) {
+            // go to the home page
+            homepageService.goHome(userName);
+        } else {
+            new UnableToLoginView().display();
         }
-
-        // go to the home page
-        homepageService.goHome(userName);
-
-
-        loginService.haveUsername(userName);
-
-
-
-
     }
 }

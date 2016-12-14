@@ -11,34 +11,48 @@ public class SolarApplication {
     //Data fields referencing ConditionalUsePermit (aka Attachment1) and Attachment2
     //  http://www.bountifulutah.gov/file/702a12ef-98da-41d1-bd1b-6578f8035cfd
     private String userName;
-   // LoginService findUserName = new LoginService();
-
-
-   /* EnterCredentialsView userNameECV = new EnterCredentialsView();
-
-    public String findUserName()  {
-        if (userNameECV.getUserVerified() == true) {
-            userName = userNameECV.getUserName();
-            return userName;
-        } else {
-            return userName = null;
-        }
-    }*/
-
-    private ApplicationIDSingleton applicationIDSingleton;
-    private ConditionalUsePermit conditionalUsePermit;
-    private Attachment2 attachment2;
+    // LoginService findUserName = new LoginService();
+    private ApplicationIDSingleton applicationIDSingleton = new ApplicationIDSingleton();
+    private ConditionalUsePermit conditionalUsePermit = new ConditionalUsePermit();
+    private Attachment2 attachment2 = new Attachment2();
 
     //Constructors
-    //constructor for new application
-    public SolarApplication(String userName) {
-        this.userName = userName;
-        this.applicationIDSingleton = new ApplicationIDSingleton();
-        this.conditionalUsePermit = new ConditionalUsePermit();
-            //We need to fill out the application.... empty now
-        this.attachment2 = new Attachment2();
-            //We need to fill out the application.... empty now
+
+    //default constructor.. all you really need. you don't use constructors a whole lot in the real world
+    public SolarApplication() {
+
     }
 
-    //constructor for existing application... not made yet.
+    //Getters and Setters
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public ApplicationIDSingleton getApplicationIDSingleton() {
+        return applicationIDSingleton;
+    }
+
+    public void setApplicationIDSingleton(ApplicationIDSingleton applicationIDSingleton) {
+        this.applicationIDSingleton = applicationIDSingleton;
+    }
+
+    public ConditionalUsePermit getConditionalUsePermit() {
+        return conditionalUsePermit;
+    }
+
+    public void setConditionalUsePermit(ConditionalUsePermit conditionalUsePermit) {
+        this.conditionalUsePermit = conditionalUsePermit;
+    }
+
+    public Attachment2 getAttachment2() {
+        return attachment2;
+    }
+
+    public void setAttachment2(Attachment2 attachment2) {
+        this.attachment2 = attachment2;
+    }
 }

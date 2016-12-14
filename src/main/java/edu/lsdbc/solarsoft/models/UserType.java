@@ -6,5 +6,10 @@ package edu.lsdbc.solarsoft.models;
 public enum  UserType {
     employ,
     admin,
-    applicant
+    applicant;
+
+    @Override
+    public String toString() {
+        return "UserType{}";
+    }
 }

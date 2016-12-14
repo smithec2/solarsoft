@@ -17,13 +17,15 @@ import java.util.Map;
 public class Siberia {
 
 
-    //users
+    //users map think of it as an index
+    //private Map<the index, SystemUser (Object... UserName, Password, UserType)> users = new HashMap<String, SystemUser>();
     private Map<String, SystemUser> users = new HashMap<String, SystemUser>();
 
     //solarApplication
     private List<SolarApplication> applications = new ArrayList<SolarApplication>();
 
     private static Siberia ourInstance = new Siberia();
+    public List<SolarApplication> getApplications;
 
     //Constructor
     private Siberia() {

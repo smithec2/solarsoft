@@ -1,17 +1,17 @@
 package edu.lsdbc.solarsoft.services;
 
-import edu.lsdbc.solarsoft.dao.LoginDao;
+import edu.lsdbc.solarsoft.dao.UserDAO;
 import edu.lsdbc.solarsoft.models.SystemUser;
 
 /**
  * Created by XPS on 12/1/2016.
  */
 public class LoginService {
-    LoginDao loginDao = new LoginDao();
+    UserDAO userDAO = new UserDAO();
 
     public boolean authenticateUser(String userName, String password) {
         Boolean result = false;
-        SystemUser user = loginDao.findUser(userName);
+        SystemUser user = userDAO.findUser(userName);
         if(user != null)
         {
             result = user.getPassword().equals(password);
@@ -20,6 +20,6 @@ public class LoginService {
     }
 
     public boolean haveUsername(String userName) {
-        return loginDao.findUser(userName) != null;
+        return userDAO.findUser(userName) != null;
     }
 }

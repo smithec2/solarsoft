@@ -35,6 +35,11 @@ public class CreateNewUserView {
         //SM
         userService.createNewUser_FromLogin(userName, password, userType);
 
+        //Confrim new user add
+        System.out.println();
+        System.out.println("User was created");
+        System.out.println();
+
         // SM - Go to login (this was goToHome but you want the user to authenticate with new user)
         userName = null;
         Login login = new Login();

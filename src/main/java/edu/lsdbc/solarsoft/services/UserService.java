@@ -23,18 +23,6 @@ public class UserService {
     public void admin_addNewUser(String adminUser, String userName, String password, String userType) {
         userDAO.addUser(new SystemUser(userName, password, UserType.valueOf(userType)));
 
-        /*
-        UserType userType_Object = userDAO.findUserType(adminUser);
-        // converts enum to string for comparison
-        // this conversion does not work
-        String userType_String = userType_Object.toString();
-
-        // admin verification thus only admin users can add users of any type
-        if (userType_String == "admin") {
-            userDAO.addUser(new SystemUser(userName, password, UserType.valueOf(userType)));
-        }
-        */
-
     }
 
     // SM - Separated out New applicant user creations from the addNewUser due to admin credential verification

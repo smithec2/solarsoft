@@ -46,7 +46,7 @@ public class UserService {
 
     }
 
-    public void userAccessType(String userType) {
+    public void userAccessType(String userName, String userType) {
 
     }
 

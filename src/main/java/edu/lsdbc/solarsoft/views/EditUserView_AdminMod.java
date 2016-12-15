@@ -115,13 +115,6 @@ public class EditUserView_AdminMod extends BaseView {
                         System.out.println(username_EditRemove + " does Not exist, Check your spelling and try again");
                         System.out.println("");
                     }
-
-
-
-                    System.out.println("Enter User Name to be Remove");
-                    String userName_Remove = input.next();
-                    UserService userToRemove = new UserService();
-                    userToRemove.removeUser(userName_Remove);
                     break;
                 case 6:
                     exit = false;

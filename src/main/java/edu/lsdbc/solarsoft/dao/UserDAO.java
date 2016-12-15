@@ -18,8 +18,8 @@ public class UserDAO {
 
     //Method to add user, user name,password and userType
     // individual used to distinguish from user, since user is used everywhere else
-    public SystemUser addUser(SystemUser individual) {
-        return Siberia.getInstance().getUsers().put(individual.getUserName(), individual);
+    public void addUser(SystemUser individual) {
+        Siberia.getInstance().getUsers().put(individual.getUserName(), individual);
     }
 
     //This one might need more work
@@ -28,9 +28,17 @@ public class UserDAO {
         return temp.getUserType();
     }
 
-    public void changePassword(SystemUser individual_new, SystemUser individual_old){
-        Siberia.getInstance().getUsers().replace(individual_old.getUserName(),individual_old,individual_new);
+    public void changePassword(SystemUser individual_new){
+        Siberia.getInstance().getUsers().remove(individual_new.getUserName());
+        Siberia.getInstance().getUsers().put(individual_new.getUserName(),individual_new);
+    }
+
+    public void removeUser(SystemUser individual_new){
+        Siberia.getInstance().getUsers().remove(individual_new.getUserName());
     }
 
 
+    public void showAllUsers() {
+        Siberia.getInstance().viewAllUsers();
+    }
 }

@@ -17,7 +17,7 @@ public class EditUserView_AdminMod extends BaseView {
         Scanner input = new Scanner(System.in);
         LoginService loginService = new LoginService();
         boolean exit = true;
-        String adminUserName = userName;
+        //String adminUserName = userName;
 
         while (exit) {
             System.out.println("|-------------------------|");
@@ -35,6 +35,7 @@ public class EditUserView_AdminMod extends BaseView {
 
             switch (input.next().charAt(0)) {
                 case '1':
+                    userToEdit.showAllUserNames();
                     break;
                 case '2':
                     // Checks username with those in database
@@ -90,9 +91,9 @@ public class EditUserView_AdminMod extends BaseView {
                         System.out.println("Are you sure you want to remove " + username_EditRemove);
                         System.out.println("1. YES");
                         System.out.println("2. NO");
-                        int remove = input.nextInt();
+                        char remove = input.next().charAt(0);
                         switch (remove){
-                            case 1:
+                            case '1':
                                 userToEdit.removeUser(username_EditRemove);
                                 if(loginService.haveUsername(username_EditRemove)){
                                     System.out.println("");
@@ -105,9 +106,10 @@ public class EditUserView_AdminMod extends BaseView {
                                     System.out.println("");
                                 }
                                 break;
-                            case 2:
+                            case '2':
+                            default:
                                 System.out.println("");
-                                System.out.println("No changes made");
+                                System.out.println("No changes were made");
                                 System.out.println("");
                                 break;
                         }

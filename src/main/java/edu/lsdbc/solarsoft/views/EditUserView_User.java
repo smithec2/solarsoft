@@ -28,7 +28,7 @@ public class EditUserView_User extends BaseView {
                 case '1':
                     System.out.println("Enter new password:");
                     String password = input.next();
-                    userToEdit.userChangePassword(password);
+                    userToEdit.userChangePassword(userName, password);
                     break;
                 case '2':
                     exit = false;

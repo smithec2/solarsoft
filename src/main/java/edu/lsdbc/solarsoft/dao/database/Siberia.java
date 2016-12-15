@@ -53,4 +53,10 @@ public class Siberia {
     public void setApplications(List<SolarApplication> applications) {
         this.applications = applications;
     }
+
+    public void viewAllUsers(){
+        System.out.println();
+        System.out.println(users.keySet());
+        System.out.println();
+    }
 }

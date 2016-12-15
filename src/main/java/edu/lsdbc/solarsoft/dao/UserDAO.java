@@ -17,10 +17,11 @@ public class UserDAO {
     }
 
     //Method to add user, password and type... user name
-    // individual used to not confuse with user where it is used everywhere else
+    // individual used to distinguish from user, since user is used everywhere else
     public SystemUser addUser(SystemUser individual) {
         return Siberia.getInstance().getUsers().put(individual.getUserName(), individual);
     }
+
     //This one might need more work
     public UserType findUserType(String userName) {
         SystemUser temp = Siberia.getInstance().getUsers().get(userName);

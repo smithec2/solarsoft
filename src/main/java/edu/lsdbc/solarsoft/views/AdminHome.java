@@ -52,14 +52,7 @@ public class AdminHome extends BaseView {
                 case 2:
                     EditUserView_AdminMod editUsers = new EditUserView_AdminMod();
 
-                    userName = input.next();
-                    if(loginService.haveUsername(userName)){
-                        editUsers.display(userName);
-                    }else {
-                        System.out.println("");
-                        System.out.println(userName + " does Not exist, Check your spelling and try again");
-                        System.out.println("");
-                    }
+                    editUsers.display(adminUser);
                     break;
                 case 3:
                     exit = false;

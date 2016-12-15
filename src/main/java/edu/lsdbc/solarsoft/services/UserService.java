@@ -10,19 +10,16 @@ import edu.lsdbc.solarsoft.models.UserType;
  */
 public class UserService {
     UserDAO userDAO = new UserDAO();
-    public void addNewUser(String userName, String password, String userType){
+    public void addNewUser(String adminUser, String userName, String password, String userType){
+
         //To add user to siberia
         //users.put(userName, new SystemUser(userName, password, UserType.applicant));
-        UserType userType_Object = userDAO.findUserType(userName);
+        UserType userType_Object = userDAO.findUserType(adminUser);
         String userType_String = userType_Object.toString();
+
          if(userType_String == "admin"){
              userDAO.addUser(new SystemUser(userName, password, UserType.valueOf(userType)));
         }
-        /*else if(userType_String == "applicant"){
-
-        }else if(userType_String == "employ"){
-
-        }*/
 
     }
     public void editUserName(String userName) {

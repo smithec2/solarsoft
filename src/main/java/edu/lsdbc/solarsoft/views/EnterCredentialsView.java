@@ -26,10 +26,12 @@ public class EnterCredentialsView extends BaseView{
     }
 
     public void display(String userName) {
+
+        // Attributes
         Scanner input = new Scanner(System.in);
-        //String userName = null;
         String password = null;
 
+        // User Interface
         System.out.println("Enter User Name");
         userName = input.next();
         System.out.println("Enter Password");

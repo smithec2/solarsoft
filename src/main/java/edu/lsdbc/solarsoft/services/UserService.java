@@ -42,8 +42,10 @@ public class UserService {
         userDAO.addUser(new SystemUser(userName, password, UserType.valueOf(userType)));
     }
 
-    public void editUserName(String userName) {
-
+    public void editUserName(String userName_edit, String userName_new) {
+        String password = userDAO.findUser(userName_edit).getPassword();
+        UserType userType_Object = userDAO.findUserType(userName_edit);
+        userDAO.changeUsername(new SystemUser(userName_edit, password, userType_Object), new SystemUser(userName_new,password,userType_Object));
     }
 
     public void changePassword(String userName, String password) {

@@ -41,4 +41,9 @@ public class UserDAO {
     public void showAllUsers() {
         Siberia.getInstance().viewAllUsers();
     }
+
+    public void changeUsername(SystemUser individual_old, SystemUser individual_new) {
+        Siberia.getInstance().getUsers().remove(individual_old.getUserName());
+        Siberia.getInstance().getUsers().put(individual_new.getUserName(),individual_new);
+    }
 }

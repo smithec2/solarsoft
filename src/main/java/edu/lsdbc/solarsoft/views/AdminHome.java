@@ -13,6 +13,7 @@ public class AdminHome extends BaseView {
     public void display(String userName) {
         Scanner input = new Scanner(System.in);
         boolean exit = true;
+        String adminUser = userName;
 
         while (exit) {
             System.out.println("|----------------|");
@@ -32,7 +33,7 @@ public class AdminHome extends BaseView {
                     String password = input.next();
                     System.out.println("Optional user types: admin, employ, applicant");
                     String userType = input.next();
-                    userObject.addNewUser(userName, password, userType);
+                    userObject.admin_addNewUser(adminUser, userName, password, userType);
                     break;
                 case 2:
                     EditUserView_AdminMod editUsers = new EditUserView_AdminMod();

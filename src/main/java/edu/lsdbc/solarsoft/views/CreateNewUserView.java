@@ -7,13 +7,14 @@ import java.util.Scanner;
 
 /**
  * Created by Arthur on 12/8/2016.
+ *
+ * Edited by Scott Muhlestein - SM on 12/14/2016
  */
 public class CreateNewUserView {
     public void display(String userName) {
         // Scanner and services
         Scanner input = new Scanner(System.in);
         LoginService loginService = new LoginService();
-        HomepageService homepageService = new HomepageService();
         UserService userService = new UserService();
 
         // Here we ask for the new user's desired name and password
@@ -26,13 +27,17 @@ public class CreateNewUserView {
         System.out.println("Enter Password: ");
         String password = input.next();
 
-        // Default to Normal user
-        String userType = "normal";
+        // Default to applicant user
+        // SM
+        String userType = "applicant";
 
         // Add the User to the database
-        userService.addNewUser(userName, password, userType);
+        //SM
+        userService.createNewUser_FromLogin(userName, password, userType);
 
-        // Go to homepage
-        homepageService.goHome(userName);
+        // SM - Go to login (this was goToHome but you want the user to authenticate with new user)
+        userName = null;
+        Login login = new Login();
+        login.display(userName);
     }
 }

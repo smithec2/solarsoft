@@ -18,13 +18,15 @@ public class AdminHome extends BaseView {
         String adminUser = userName;
 
         while (exit) {
-            System.out.println("|----------------|");
-            System.out.println("|   Admin Home   |");
-            System.out.println("|----------------|");
-            System.out.println("| 1: Add User    |");
-            System.out.println("| 2: Edit Users  |");
-            System.out.println("| 3: Exit        |");
-            System.out.println("|----------------|");
+            System.out.println("|-----------------------|");
+            System.out.println("|       Admin Home      |");
+            System.out.println("|-----------------------|");
+            System.out.println("| 1: Add User           |");
+            System.out.println("| 2: Edit Users         |");
+            System.out.println("| 3: Goto UserHome      |");
+            System.out.println("| 4: Goto CityWorkHome  |");
+            System.out.println("| 5: Exit               |");
+            System.out.println("|-----------------------|");
             System.out.println("");
             System.out.println("Enter Number to select your option:");
 
@@ -51,10 +53,15 @@ public class AdminHome extends BaseView {
                     break;
                 case '2':
                     EditUserView_AdminMod editUsers = new EditUserView_AdminMod();
-
                     editUsers.display(adminUser);
                     break;
                 case '3':
+                    new UserHome().display(adminUser);
+                    break;
+                case '4':
+                    new CityWorkHomeView().display(adminUser);
+                    break;
+                case '5':
                     exit = false;
                     break;
                 default:

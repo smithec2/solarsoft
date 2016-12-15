@@ -53,8 +53,10 @@ public class UserService {
         userDAO.changePassword(new SystemUser(userName, password, userType_Object));
     }
 
-    public void userAccessType(String userName, String userType) {
-
+    public void userAccessType(String userName, String newUserType) {
+        String password = userDAO.findUser(userName).getPassword();
+        UserType userType_Object = userDAO.findUserType(userName);
+        userDAO.changeUserType(new SystemUser(userName, password, UserType.valueOf(newUserType)), new SystemUser(userName, password, userType_Object));
     }
 
     public void removeUser(String userName) {

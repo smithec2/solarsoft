@@ -46,4 +46,9 @@ public class UserDAO {
         Siberia.getInstance().getUsers().remove(individual_old.getUserName());
         Siberia.getInstance().getUsers().put(individual_new.getUserName(),individual_new);
     }
+
+    public void changeUserType(SystemUser individual_new, SystemUser individual_old){
+        Siberia.getInstance().getUsers().remove(individual_old.getUserName());
+        Siberia.getInstance().getUsers().put(individual_new.getUserName(),individual_new);
+    }
 }

@@ -26,13 +26,15 @@ public class CreateNewUserView {
         System.out.println("Enter Password: ");
         String password = input.next();
 
-        // Default to Normal user
-        String userType = "normal";
+        // Default to applicant user
+        String userType = "applicant";
 
         // Add the User to the database
-        userService.addNewUser(userName, password, userType);
+        userService.createNewUser_FromLogin(userName, password, userType);
 
-        // Go to homepage
-        homepageService.goHome(userName);
+        // Go to login
+        userName = null;
+        Login login = new Login();
+        login.display(userName);
     }
 }

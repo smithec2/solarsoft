@@ -5,12 +5,14 @@ import edu.lsdbc.solarsoft.dao.database.Siberia;
 import edu.lsdbc.solarsoft.models.SystemUser;
 import edu.lsdbc.solarsoft.models.UserType;
 
+import java.util.Scanner;
+
 /**
  * Created by Scott on 12/7/2016.
  */
 public class UserService {
     UserDAO userDAO = new UserDAO();
-    public void addNewUser(String adminUser, String userName, String password, String userType){
+    public void admin_addNewUser(String adminUser, String userName, String password, String userType){
 
         //To add user to siberia
         //users.put(userName, new SystemUser(userName, password, UserType.applicant));
@@ -22,6 +24,10 @@ public class UserService {
         }
 
     }
+    public void createNewUser_FromLogin(String userName, String password, String userType){
+        userDAO.addUser(new SystemUser(userName, password, UserType.valueOf(userType)));
+    }
+
     public void editUserName(String userName) {
 
     }

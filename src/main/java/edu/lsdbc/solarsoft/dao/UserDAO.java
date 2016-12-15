@@ -11,12 +11,12 @@ import edu.lsdbc.solarsoft.views.UserHome;
  */
 public class UserDAO {
 
-    // looks up an user
+    // looks up a user
     public SystemUser findUser(String userName) {
         return Siberia.getInstance().getUsers().get(userName);
     }
 
-    //Method to add user, password and type... user name
+    //Method to add user, user name,password and userType
     // individual used to distinguish from user, since user is used everywhere else
     public SystemUser addUser(SystemUser individual) {
         return Siberia.getInstance().getUsers().put(individual.getUserName(), individual);

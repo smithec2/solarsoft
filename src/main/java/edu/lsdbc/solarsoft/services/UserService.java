@@ -43,7 +43,11 @@ public class UserService {
     }
 
     public void changePassword(String userName, String password) {
+        UserType userType_Object = userDAO.findUserType(userName);
+        //String userType_String = userType_Object.toString();
+        String password_old = userDAO.findUser(userName).getPassword();
 
+        userDAO.changePassword(new SystemUser(userName, password, userType_Object), new SystemUser(userName, password_old, userType_Object));
     }
 
     public void userAccessType(String userName, String userType) {

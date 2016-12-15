@@ -33,10 +33,10 @@ public class EditUserView_AdminMod extends BaseView {
             System.out.println("");
             System.out.println("Enter Number to select your option:");
 
-            switch (input.nextInt()) {
-                case 1:
+            switch (input.next().charAt(0)) {
+                case '1':
                     break;
-                case 2:
+                case '2':
                     // Checks username with those in database
                     System.out.println("Enter Username to Edit:");
                     String username_Edit = input.next();
@@ -49,22 +49,23 @@ public class EditUserView_AdminMod extends BaseView {
                         System.out.println("");
                     }
                     break;
-                case 3:
+                case '3':
                     // Checks username with those in database
                     System.out.println("Enter Username to change password for:");
-                    String username_EditPassword = input.next();
+                    String EditPassword_username = input.next();
                     // if user exists edit else give user not found text
-                    if(loginService.haveUsername(username_EditPassword)){
+                    if(loginService.haveUsername(EditPassword_username)){
                         System.out.println("Enter Password:");
                         String password_New = input.next();
-                        userToEdit.changePassword(username_EditPassword, password_New);
+
+                        userToEdit.changePassword(EditPassword_username, password_New);
                     }else {
                         System.out.println("");
-                        System.out.println(username_EditPassword + " does Not exist, Check your spelling and try again");
+                        System.out.println(EditPassword_username + " does Not exist, Check your spelling and try again");
                         System.out.println("");
                     }
                     break;
-                case 4:
+                case '4':
                     // Checks username with those in database
                     System.out.println("Enter Username to Edit:");
                     String username_EditAccess = input.next();
@@ -80,7 +81,7 @@ public class EditUserView_AdminMod extends BaseView {
                     }
 
                     break;
-                case 5:
+                case '5':
                     // Checks username with those in database
                     System.out.println("Enter User Name to be Removed:");
                     String username_EditRemove = input.next();
@@ -116,8 +117,10 @@ public class EditUserView_AdminMod extends BaseView {
                         System.out.println("");
                     }
                     break;
-                case 6:
+                case '6':
                     exit = false;
+                    break;
+                default:
                     break;
             }
 

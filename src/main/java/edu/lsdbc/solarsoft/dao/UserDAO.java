@@ -28,4 +28,9 @@ public class UserDAO {
         return temp.getUserType();
     }
 
+    public void changePassword(SystemUser individual_new, SystemUser individual_old){
+        Siberia.getInstance().getUsers().replace(individual_old.getUserName(),individual_old,individual_new);
+    }
+
+
 }

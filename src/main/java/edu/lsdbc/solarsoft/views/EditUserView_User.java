@@ -24,14 +24,16 @@ public class EditUserView_User extends BaseView {
             System.out.println("");
             System.out.println("Enter Number to select your option:");
 
-            switch (input.nextInt()) {
-                case 1:
+            switch (input.next().charAt(0)) {
+                case '1':
                     System.out.println("Enter new password:");
                     String password = input.next();
                     userToEdit.userChangePassword(password);
                     break;
-                case 2:
+                case '2':
                     exit = false;
+                    break;
+                default:
                     break;
             }
 

@@ -23,22 +23,24 @@ public class EditApplicationView extends BaseView{
             System.out.println("");
             System.out.println("Enter Number to select your option:");
 
-            switch (input.nextInt()) {
-                case 1:
+            switch (input.next().charAt(0)) {
+                case '1':
                     input.close();
                     applicationObject.editApplication(username.userName,appID);
                     break;
-                case 2:
+                case '2':
                     input.close();
                     applicationObject.saveApplication(username.userName,appID);
                     break;
-                case 3:
+                case '3':
                     input.close();
                     applicationObject.submitApplication(username.userName,appID);
                     break;
-                case 4:
+                case '4':
                     input.close();
                     applicationObject.deleteApplication(username.userName,appID);
+                    break;
+                default:
                     break;
             }
 

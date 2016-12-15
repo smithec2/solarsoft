@@ -21,15 +21,19 @@ public class UserService {
     UserDAO userDAO = new UserDAO();
 
     public void admin_addNewUser(String adminUser, String userName, String password, String userType) {
+        userDAO.addUser(new SystemUser(userName, password, UserType.valueOf(userType)));
 
+        /*
         UserType userType_Object = userDAO.findUserType(adminUser);
         // converts enum to string for comparison
+        // this conversion does not work
         String userType_String = userType_Object.toString();
 
         // admin verification thus only admin users can add users of any type
         if (userType_String == "admin") {
             userDAO.addUser(new SystemUser(userName, password, UserType.valueOf(userType)));
         }
+        */
 
     }
 
@@ -38,12 +42,15 @@ public class UserService {
         userDAO.addUser(new SystemUser(userName, password, UserType.valueOf(userType)));
     }
 
-    public void editUserName(String userName) {
-
+    public void editUserName(String userName_edit, String userName_new) {
+        String password = userDAO.findUser(userName_edit).getPassword();
+        UserType userType_Object = userDAO.findUserType(userName_edit);
+        userDAO.changeUsername(new SystemUser(userName_edit, password, userType_Object), new SystemUser(userName_new,password,userType_Object));
     }
 
     public void changePassword(String userName, String password) {
-
+        UserType userType_Object = userDAO.findUserType(userName);
+        userDAO.changePassword(new SystemUser(userName, password, userType_Object));
     }
 
     public void userAccessType(String userName, String userType) {
@@ -51,10 +58,17 @@ public class UserService {
     }
 
     public void removeUser(String userName) {
-
+        String password = userDAO.findUser(userName).getPassword();
+        UserType userType_Object = userDAO.findUserType(userName);
+        userDAO.removeUser(new SystemUser(userName, password, userType_Object));
     }
 
-    public void userChangePassword(String password) {
+    public void userChangePassword(String userName, String password) {
+        UserType userType_Object = userDAO.findUserType(userName);
+        userDAO.changePassword(new SystemUser(userName, password, userType_Object));
+    }
 
+    public void showAllUserNames() {
+        userDAO.showAllUsers();
     }
 }

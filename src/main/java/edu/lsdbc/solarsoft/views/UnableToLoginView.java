@@ -11,6 +11,7 @@ public class UnableToLoginView extends BaseView {
         System.out.println("");
         System.out.println("");
         System.out.println("");
+        userName = null;
         new Login().display(userName);
     }
 }

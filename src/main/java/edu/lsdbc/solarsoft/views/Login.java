@@ -21,17 +21,19 @@ public class Login extends BaseView {
             System.out.println("");
             System.out.println("Enter Number to select your option:");
 
-            switch (input.nextInt()) {
-                case 1:
+            switch (input.next().charAt(0)) {
+                case '1':
                     EnterCredentialsView login = new EnterCredentialsView();
                     login.display(userName);
                     break;
-                case 2:
+                case '2':
                     CreateNewUserView newUser = new CreateNewUserView();
                     newUser.display(userName);
                     break;
-                case 3:
+                case '3':
                     exit = false;
+                    break;
+                default:
                     break;
             }
 

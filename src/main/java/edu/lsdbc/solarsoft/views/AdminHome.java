@@ -28,8 +28,8 @@ public class AdminHome extends BaseView {
             System.out.println("");
             System.out.println("Enter Number to select your option:");
 
-            switch (input.nextInt()) {
-                case 1:
+            switch (input.next().charAt(0)) {
+                case '1':
                     UserService userObject = new UserService();
 
                     // request username
@@ -49,13 +49,15 @@ public class AdminHome extends BaseView {
                     String userType = input.next();
                     userObject.admin_addNewUser(adminUser, userName, password, userType);
                     break;
-                case 2:
+                case '2':
                     EditUserView_AdminMod editUsers = new EditUserView_AdminMod();
 
                     editUsers.display(adminUser);
                     break;
-                case 3:
+                case '3':
                     exit = false;
+                    break;
+                default:
                     break;
             }
 

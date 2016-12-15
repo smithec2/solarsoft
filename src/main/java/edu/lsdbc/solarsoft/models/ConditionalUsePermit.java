@@ -54,4 +54,21 @@ public class ConditionalUsePermit {
     public void setSpecSheets(boolean specSheets) {this.specSheets = specSheets;}
     public boolean isElectricalPhoto() {return electricalPhoto;}
     public void setElectricalPhoto(boolean electricalPhoto) {this.electricalPhoto = electricalPhoto;}
+
+    // automatically make all true
+    public void autoTrue() {
+        feePaid = true;
+        sitePlanApproved = true;
+        oneLineDiagram = true;
+        engineerLetter = true;
+        solarPacketForms = true;
+        packetQuestions = true;
+        packetMetering = true;
+        packetLightPower = true;
+        packetBuildingPermit = true;
+        specSheets = true;
+        electricalPhoto = true;
+    }
+
+
 }

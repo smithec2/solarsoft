@@ -35,7 +35,9 @@ public class UserHome {
                     applicationService.viewApps_User(userName);
                     break;
                 case 3:
-                    // Reference to edit application view -- need class
+                    System.out.println("Enter Application ID: ");
+                    ApplicationService applicationService1 = new ApplicationService();
+                    applicationService1.viewApps_User(userName);
                     break;
                 case 4:
                     // Reference to new application view  -- need class

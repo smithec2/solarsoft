@@ -32,6 +32,13 @@ public class Siberia {
         users.put("app", new SystemUser("app", "p", UserType.applicant));
         users.put("admin", new SystemUser("admin", "p", UserType.admin));
         users.put("emp", new SystemUser("emp", "p", UserType.employ));
+
+        // Create a default Solar Application -- Arthur
+        SolarApplication arthurNewSolarApplication = new SolarApplication();
+        arthurNewSolarApplication.setUserName("app");
+        arthurNewSolarApplication.getConditionalUsePermit().autoTrue();
+        arthurNewSolarApplication.getConditionalUsePermit().getContractor().setCompanyName("Arthur Company");
+        arthurNewSolarApplication.getConditionalUsePermit().getContractor().setContactPerson("Arthur");
     }
 
     public static Siberia getInstance() {

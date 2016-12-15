@@ -1,17 +1,21 @@
 package edu.lsdbc.solarsoft.views;
 
 
+import edu.lsdbc.solarsoft.services.LoginService;
 import edu.lsdbc.solarsoft.services.UserService;
 
 import java.util.Scanner;
 
 /**
  * Created by Scott on 12/7/2016.
+ *
+ * Edited by Scott Muhlestein - SM on 12/14/2016
  */
 public class EditUserView_AdminMod extends BaseView {
     UserService userToEdit = new UserService();
     public void display(String userName) {
         Scanner input = new Scanner(System.in);
+        LoginService loginService = new LoginService();
         boolean exit = true;
         String adminUserName = userName;
 
@@ -33,25 +37,84 @@ public class EditUserView_AdminMod extends BaseView {
                 case 1:
                     break;
                 case 2:
-                    System.out.println("Enter User Name to Edit:");
+                    // Checks username with those in database
+                    System.out.println("Enter Username to Edit:");
                     String username_Edit = input.next();
-                    userToEdit.editUserName(username_Edit);
+                    // if user exists edit else give user not found text
+                    if(loginService.haveUsername(username_Edit)){
+                        userToEdit.editUserName(username_Edit);
+                    }else {
+                        System.out.println("");
+                        System.out.println(username_Edit + " does Not exist, Check your spelling and try again");
+                        System.out.println("");
+                    }
                     break;
                 case 3:
-                    System.out.println("Enter new password:");
-                    String password_New = input.next();
-                    userToEdit.changePassword(userName, password_New);
+                    // Checks username with those in database
+                    System.out.println("Enter Username to change password for:");
+                    String username_EditPassword = input.next();
+                    // if user exists edit else give user not found text
+                    if(loginService.haveUsername(username_EditPassword)){
+                        System.out.println("Enter Password:");
+                        String password_New = input.next();
+                        userToEdit.changePassword(username_EditPassword, password_New);
+                    }else {
+                        System.out.println("");
+                        System.out.println(username_EditPassword + " does Not exist, Check your spelling and try again");
+                        System.out.println("");
+                    }
                     break;
                 case 4:
-                    System.out.println("Enter User access type");
-                    String userAccess = input.next();
-                    userToEdit.userAccessType(userAccess);
+                    // Checks username with those in database
+                    System.out.println("Enter Username to Edit:");
+                    String username_EditAccess = input.next();
+                    // if user exists edit else give user not found text
+                    if(loginService.haveUsername(username_EditAccess)){
+                        System.out.println("Enter UserType:");
+                        String userAccess = input.next();
+                        userToEdit.userAccessType(username_EditAccess, userAccess);
+                    }else {
+                        System.out.println("");
+                        System.out.println(username_EditAccess + " does Not exist, Check your spelling and try again");
+                        System.out.println("");
+                    }
+
                     break;
                 case 5:
-                    System.out.println("Enter User Name to be Remove");
-                    String userName_Remove = input.next();
-                    UserService userToRemove = new UserService();
-                    userToRemove.removeUser(userName_Remove);
+                    // Checks username with those in database
+                    System.out.println("Enter User Name to be Removed:");
+                    String username_EditRemove = input.next();
+                    // if user exists edit else give user not found text
+                    if(loginService.haveUsername(username_EditRemove)){
+                        System.out.println("Are you sure you want to remove " + username_EditRemove);
+                        System.out.println("1. YES");
+                        System.out.println("2. NO");
+                        int remove = input.nextInt();
+                        switch (remove){
+                            case 1:
+                                userToEdit.removeUser(username_EditRemove);
+                                if(loginService.haveUsername(username_EditRemove)){
+                                    System.out.println("");
+                                    System.out.println("User was not Removed");
+                                    System.out.println("");
+                                }
+                                else {
+                                    System.out.println("");
+                                    System.out.println("User was Removed");
+                                    System.out.println("");
+                                }
+                                break;
+                            case 2:
+                                System.out.println("");
+                                System.out.println("No changes made");
+                                System.out.println("");
+                                break;
+                        }
+                    }else {
+                        System.out.println("");
+                        System.out.println(username_EditRemove + " does Not exist, Check your spelling and try again");
+                        System.out.println("");
+                    }
                     break;
                 case 6:
                     exit = false;

@@ -1,5 +1,6 @@
 package edu.lsdbc.solarsoft.dao.database;
 
+import edu.lsdbc.solarsoft.models.AppStatusType;
 import edu.lsdbc.solarsoft.models.SolarApplication;
 import edu.lsdbc.solarsoft.models.SystemUser;
 import edu.lsdbc.solarsoft.models.UserType;
@@ -25,13 +26,23 @@ public class Siberia {
     private List<SolarApplication> applications = new ArrayList<SolarApplication>();
 
     private static Siberia ourInstance = new Siberia();
-    public List<SolarApplication> getApplications;
 
     //Constructor
     private Siberia() {
         users.put("app", new SystemUser("app", "p", UserType.applicant));
         users.put("admin", new SystemUser("admin", "p", UserType.admin));
         users.put("emp", new SystemUser("emp", "p", UserType.employ));
+
+        SolarApplication sa = new SolarApplication();
+        sa.setUserName("app");
+        sa.setAppName("my first app");
+        sa.setStatus(AppStatusType.submitted);
+        applications.add(sa);
+
+        sa.setUserName("app");
+        sa.setAppName("my 2nd app");
+        sa.setStatus(AppStatusType.submitted);
+        applications.add(sa);
     }
 
     public static Siberia getInstance() {

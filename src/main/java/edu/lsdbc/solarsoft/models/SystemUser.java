@@ -4,6 +4,7 @@ package edu.lsdbc.solarsoft.models;
  * Created by Glen Turnbow on 12/10/2016.
  */
 public class SystemUser {
+    int userId;
     String userName;
     String password;
     UserType userType;

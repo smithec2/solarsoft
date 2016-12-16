@@ -1,8 +1,6 @@
 package edu.lsdbc.solarsoft.models;
 
 import edu.lsdbc.solarsoft.services.ApplicationIDSingleton;
-import edu.lsdbc.solarsoft.services.LoginService;
-import edu.lsdbc.solarsoft.views.EnterCredentialsView;
 
 /**
  * Created by Glen Turnbow on 12/10/2016.
@@ -11,6 +9,8 @@ public class SolarApplication {
     //Data fields referencing ConditionalUsePermit (aka Attachment1) and Attachment2
     //  http://www.bountifulutah.gov/file/702a12ef-98da-41d1-bd1b-6578f8035cfd
     private String userName;
+    private AppStatusType status;
+    private String appName;
     // LoginService findUserName = new LoginService();
     private ApplicationIDSingleton applicationIDSingleton = new ApplicationIDSingleton();
     private ConditionalUsePermit conditionalUsePermit = new ConditionalUsePermit();
@@ -54,5 +54,26 @@ public class SolarApplication {
 
     public void setAttachment2(Attachment2 attachment2) {
         this.attachment2 = attachment2;
+
+    }
+
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    public AppStatusType getStatus() {
+        return status;
+    }
+
+    public void setStatus(AppStatusType status) {
+        this.status = status;
+    }
+
+    public String toShortDisplay() {
+        return "user:" + this.getUserName() +  "  appname:" + this.getAppName();
     }
 }

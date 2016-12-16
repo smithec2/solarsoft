@@ -38,7 +38,7 @@ public class Siberia {
         sa.setAppName("my first app");
         sa.setStatus(AppStatusType.submitted);
         applications.add(sa);
-
+        sa = new SolarApplication();
         sa.setUserName("app");
         sa.setAppName("my 2nd app");
         sa.setStatus(AppStatusType.submitted);

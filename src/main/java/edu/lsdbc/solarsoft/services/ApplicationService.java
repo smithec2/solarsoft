@@ -1,13 +1,21 @@
 package edu.lsdbc.solarsoft.services;
 
+import edu.lsdbc.solarsoft.dao.SolarApplicationDAO;
+import edu.lsdbc.solarsoft.models.AppStatusType;
+import edu.lsdbc.solarsoft.models.SolarApplication;
 import edu.lsdbc.solarsoft.views.EnterCredentialsView;
+import edu.lsdbc.solarsoft.views.ViewSubmitedApps;
+
+import java.util.List;
 
 /**
  * Created by Scott on 12/8/2016.
  */
 public class ApplicationService {
     public void viewAllSubmitedApplications(){
-
+        SolarApplicationDAO solarApplicationDAO = new SolarApplicationDAO();
+        List<SolarApplication> saList = solarApplicationDAO.findSolarApplicationByStatus(AppStatusType.submitted);
+        new ViewSubmitedApps().display(saList);
     }
     public void viewUserApplication_CW(String userName, int appID){
 

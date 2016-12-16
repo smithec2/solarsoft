@@ -2,6 +2,7 @@ package edu.lsdbc.solarsoft.dao;
 
 import edu.lsdbc.solarsoft.dao.database.Siberia;
 import edu.lsdbc.solarsoft.models.SolarApplication;
+import edu.lsdbc.solarsoft.models.AppStatusType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 public class SolarApplicationDAO {
     //get SolarApplication for a systemUser
     public List<SolarApplication> findUsersSolarApplication(String userName){
-        List<SolarApplication> list = Siberia.getInstance().getApplications;
+        List<SolarApplication> list = Siberia.getInstance().getApplications();
         List<SolarApplication> userItemsReturn = new ArrayList<SolarApplication>();
 
         for(SolarApplication sa: list){
@@ -22,5 +23,17 @@ public class SolarApplicationDAO {
             }
         }
             return userItemsReturn;
+    }
+
+    public List<SolarApplication> findSolarApplicationByStatus(AppStatusType status){
+        List<SolarApplication> list = Siberia.getInstance().getApplications();
+        List<SolarApplication> returnItems = new ArrayList<SolarApplication>();
+
+        for(SolarApplication sa: list){
+            if(sa.getStatus() == status){
+                returnItems.add(sa);
+            }
+        }
+        return returnItems;
     }
 }
